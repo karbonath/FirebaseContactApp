@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Latihan3</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="learn_graphic_and_ui_ux_designing_in_hindi_for_free_with_live_projects">Learn Graphic and UI/UX designing in Hindi for free with live projects.</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="don_t_have_an_account_register_now">Don\'t have an account? Register now</string>
+    <string name="todo">TODO</string>
+    <string name="john_doe">John Doe</string>
+    <string name="profile_image_placeholder">Profile image placeholder</string>
+    <string name="_08123456789">08123456789</string>
+    <string name="my_friends">My Friends</string>
+    <string name="hapus">hapus</string>
+    <string name="bersihkan">BERSIHKAN</string>
+    <string name="simpan">SIMPAN</string>
+    <string name="no_contacts_yet">No contacts yet</string>
+    <string name="registrasi_akun_disini">Registrasi akun disini</string>
+    <string name="tambah">Tambah</string>
+    <string name="username">Username</string>
+    <string name="type">Type</string>
+    <string name="clear">Clear</string>
+    <string name="save">Save</string>
+    <string name="type_text">Type</string>
+    <string name="username_text">Username</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="save_btn">Save</string>
+    <string name="clear_btn">Clear</string>
+    <string name="login_akun_disini">Login akun disini</string>
+</resources>
