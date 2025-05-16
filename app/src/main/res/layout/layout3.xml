@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AddContactActivity">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="0dp"
@@ -18,7 +17,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Form inputs -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_name"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -99,7 +97,6 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Buttons (Clear and Save) -->
     <LinearLayout
         style="?android:attr/buttonBarStyle"
         android:layout_width="376dp"

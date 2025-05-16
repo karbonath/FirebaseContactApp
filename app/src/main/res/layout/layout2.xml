@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".ContactListActivity">
 
-    <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="410dp"
@@ -17,7 +16,6 @@
         app:title="MyContact"
         app:titleTextColor="#FFFFFF" />
 
-    <!-- Empty View for no contacts -->
     <LinearLayout
         android:id="@+id/empty_view"
         android:layout_width="0dp"
@@ -37,7 +35,6 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="0dp"
@@ -49,7 +46,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/item_contact" />
 
-    <!-- Button to add new contact -->
     <Button
         android:id="@+id/btn_add_contact"
         android:layout_width="wrap_content"

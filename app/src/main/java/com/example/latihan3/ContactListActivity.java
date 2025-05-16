@@ -35,29 +35,24 @@ public class ContactListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout2);  // Ganti dengan layout yang benar
+        setContentView(R.layout.layout2);
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         emptyView = findViewById(R.id.empty_view);
         contactList = new ArrayList<>();
 
-        // Initialize Firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         contactsRef = database.getReference("contacts");
 
-        // Setup adapter for RecyclerView
         contactAdapter = new ContactAdapter(contactList);
         recyclerView.setAdapter(contactAdapter);
 
-        // Button to add a new contact
-        Button btnAddContact = findViewById(R.id.btn_add_contact);  // Button to add contact
+        Button btnAddContact = findViewById(R.id.btn_add_contact);
         btnAddContact.setOnClickListener(v -> {
-            // Navigate to AddContactActivity
             startActivity(new Intent(ContactListActivity.this, AddContactActivity.class));
         });
 
-        // Fetch contacts from Firebase
         fetchContacts();
     }
 
@@ -69,13 +64,8 @@ public class ContactListActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     Contact contact = snapshot.getValue(Contact.class);
                     if (contact != null) {
-                        // Simpan ID kontak dengan jelas
                         String contactId = snapshot.getKey();
                         contact.setId(contactId);
-
-                        // Tambahkan log untuk verifikasi ID
-                        System.out.println("Contact loaded: " + contact.getName() + ", ID: " + contact.getId());
-
                         contactList.add(contact);
                     }
                 }
@@ -100,7 +90,6 @@ public class ContactListActivity extends AppCompatActivity {
         contactAdapter.notifyDataSetChanged();
     }
 
-    // Contact Adapter for RecyclerView
     public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactViewHolder> {
 
         private final List<Contact> contactList;
@@ -123,21 +112,15 @@ public class ContactListActivity extends AppCompatActivity {
             holder.tvPhone.setText(contact.getPhone());
             holder.tvUsername.setText(contact.getUsername());
 
-            // Log untuk debugging
             final String contactId = contact.getId();
-            System.out.println("Binding contact: " + contact.getName() + ", ID: " + contactId);
 
             holder.btnDelete.setOnClickListener(v -> {
-                // Handle delete functionality
                 if (contactId != null && !contactId.isEmpty()) {
-                    // Simpan posisi untuk keamanan (menghindari perubahan posisi)
                     final int deletePosition = holder.getAdapterPosition();
                     if (deletePosition != RecyclerView.NO_POSITION) {
-                        // Hapus di database
                         contactsRef.child(contactId).removeValue()
                                 .addOnSuccessListener(aVoid -> {
                                     Toast.makeText(ContactListActivity.this, "Contact deleted successfully", Toast.LENGTH_SHORT).show();
-                                    // Pembaruan UI akan terjadi otomatis melalui ValueEventListener
                                 })
                                 .addOnFailureListener(e -> {
                                     Toast.makeText(ContactListActivity.this,

@@ -7,9 +7,7 @@ public class Contact {
     private String username;
     private String type;
 
-    // Konstruktor kosong diperlukan untuk Firebase
     public Contact() {
-        // Diperlukan untuk deserialisasi Firebase
     }
 
     public Contact(String name, String phone, String username) {
@@ -18,7 +16,6 @@ public class Contact {
         this.username = username;
     }
 
-    // Konstruktor dengan 5 parameter termasuk id dan type
     public Contact(String id, String name, String phone, String username, String type) {
         this.id = id;
         this.name = name;
@@ -27,7 +24,6 @@ public class Contact {
         this.type = type;
     }
 
-    // Getter dan Setter
     public String getId() {
         return id;
     }
